@@ -217,9 +217,11 @@ addsetremote(; path, addset, githubuser=get(ENV, "GITHUB_USER", "")) =
     end
 addremote(; path, githubuser=get(ENV, "GITHUB_USER", "")) = addsetremote(path=path, githubuser=githubuser, addset="add")
 setremote(; path, githubuser=get(ENV, "GITHUB_USER", "")) = addsetremote(path=path, githubuser=githubuser, addset="set-url")
-pushremote(; path=".") =
+pushremote(; path=".", githubuser=get(ENV, "GITHUB_USER", ""), githubauth=get(ENV, "GITHUB_AUTH", "")) =
     cd(path) do
-        run(`$(git()) push -f -u origin main`)
+        url = getremoteurl()
+        url = replace(url, "https://" => "https://$githubuser:$githubauth@")
+        run(`$(git()) push $url main`)
     end
 function addcommit(; path, commitmessage=".")
     cd(path) do
