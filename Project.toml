@@ -1,6 +1,6 @@
 name = "TOGLearning"
 uuid = "f24ce740-eac4-403b-aa84-6d398323826e"
-version = "9.0.0"
+version = "10.0.0"
 authors = ["1m1 <imi@1m1.io>"]
 
 [deps]
