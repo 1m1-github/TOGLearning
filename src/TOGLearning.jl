@@ -24,6 +24,8 @@ const README(name) = "# $name"
 const GITIGNOREFILE = ".gitignore"
 const GITIGNORE = """
 .*
+**/.*
+!**/.gitignore
 Manifest.toml
 tmp*
 """
@@ -219,10 +221,10 @@ addremote(; path, githubuser=get(ENV, "GITHUB_USER", "")) = addsetremote(path=pa
 setremote(; path, githubuser=get(ENV, "GITHUB_USER", "")) = addsetremote(path=path, githubuser=githubuser, addset="set-url")
 pushremote(; path=".", githubuser=get(ENV, "GITHUB_USER", ""), githubauth=get(ENV, "GITHUB_AUTH", "")) =
     cd(path) do
-        url = getremoteurl()
-        url = replace(url, "https://" => "https://$githubuser:$githubauth@")
-        run(`$(git()) push $url main`)
-        run(`$(git()) push`)
+        # url = getremoteurl()
+        # url = replace(url, "https://" => "https://$githubuser:$githubauth@")
+        # run(`$(git()) push $url main`)
+        run(`$(git()) push -u origin main`)
     end
 function addcommit(; path, commitmessage=".")
     cd(path) do
