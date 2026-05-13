@@ -209,7 +209,7 @@ hasremote(; path=".") =
     end
 getremoteurl(; path=".") =
     cd(path) do
-        readline(`$(git()) remote get-url origin`)
+        readlines(`$(git()) remote get-url origin`) |> only
     end
 addsetremote(; path, addset, githubuser=get(ENV, "GITHUB_USER", "")) =
     cd(path) do
