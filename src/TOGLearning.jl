@@ -222,6 +222,7 @@ pushremote(; path=".", githubuser=get(ENV, "GITHUB_USER", ""), githubauth=get(EN
         url = getremoteurl()
         url = replace(url, "https://" => "https://$githubuser:$githubauth@")
         run(`$(git()) push $url main`)
+        run(`$(git()) push`)
     end
 function addcommit(; path, commitmessage=".")
     cd(path) do
