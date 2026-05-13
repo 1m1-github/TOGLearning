@@ -200,8 +200,8 @@ isdirty(; path=".") =
     cd(path) do
         !isempty(read(`$(git()) status --porcelain`))
     end
-remoteurl(; name, githubuser=get(ENV, "GITHUB_USER", "")) = """https://github.com/$githubuser/$name.git"""
-# remoteurl(; name, githubuser=get(ENV, "GITHUB_USER", "")) = """git@github.com:$githubuser/$name.git"""
+# remoteurl(; name, githubuser=get(ENV, "GITHUB_USER", "")) = """https://github.com/$githubuser/$name.git"""
+remoteurl(; name, githubuser=get(ENV, "GITHUB_USER", "")) = """git@github.com:$githubuser/$name.git"""
 # remoteurl(; name, githubuser=get(ENV, "GITHUB_USER", "")) = joinpath(JULIACODEPATH, name)
 hasremote(; path=".") =
     cd(path) do
