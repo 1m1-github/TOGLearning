@@ -1,6 +1,6 @@
 name = "TOGLearning"
 uuid = "f24ce740-eac4-403b-aa84-6d398323826e"
-version = "8.0.0"
+version = "9.0.0"
 authors = ["1m1 <imi@1m1.io>"]
 
 [deps]
@@ -8,4 +8,5 @@ LocalRegistry = "89398ba2-070a-4b16-a995-9893c55d93cf"
 Git = "d7ba0133-e1db-5d97-8f8c-041e4b3a1eb2"
 GitHub = "bc5e4493-9b4d-5f90-b8aa-2b2bcaad7a26"
 Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+TOGInstall = "fce80b97-c5fb-4a1c-bec5-c7fe9f180d45"
 TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"

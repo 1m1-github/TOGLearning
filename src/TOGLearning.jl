@@ -10,8 +10,10 @@ export update, newpkg, updatepkg, cppkg
 
 using Pkg, TOML, LocalRegistry, Git, GitHub
 using Pkg.Types: PackageSpec, Context
+using TOGInstall: REGISTRYNAME
 
-const REGISTRYNAME = "TOGRegistry"
+ENV["JULIA_PKG_USE_CLI_GIT"] = true
+
 const JULIACODEPATH = joinpath(DEPOT_PATH[1], "dev")
 
 const LICENSEFILE = "LICENSE"
